@@ -169,14 +169,6 @@ else
 fi
 ```
 
-## Scripts
-
-BConnect - Bluetooth Connect  
-BDisconnect - Bluetooth Disconnect  
-BScan - Bluetooth Scan  
-scanner - QT QML Bluetooth App
-
-
  ## Enabling Bluetooth on Pi for QT
 
 Building Qt Bluetooth  - https://doc.qt.io/qt-5/qtbluetooth-index.html
@@ -205,5 +197,3 @@ I ended up doing as this website says and still not working.
 My only question in my mind is that the Bluetooth App on QT is designed for something other than linux, like maybe windows or android????  
 
 Looking at this page I think maybe its a problem with BlueZ (The driver for bluetooth on the pi) and QT communicating properly. https://doc.qt.io/qt-5/qtbluetooth-attribution-bluez.html
-
-Earbud MAC Address: F4:7D:EF:12:88:19
