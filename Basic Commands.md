@@ -102,41 +102,35 @@ You should see mmcblk1 (missing on below so not good below)
 
 Inside you will see the PWM devices (0, 1 etc).
 
-Goto /0
+`Goto /0`
 
-Echo 1 > enable
+`Echo 1 > enable`
 
-Echo (a number between 0 and 100%) > duty_cycle
+`Echo (a number between 0 and 100%) > duty_cycle`
 
-Echo 0 > duty_cycle
+`Echo 0 > duty_cycle`
 
 #### To reset the zoom level to x1 whilst UisU is enabled:
 
-dbus-send --system --print-reply --type=method_call --dest='com.inspectron.qWirelessController' / com.inspectron.qWirelessController.requestSetZoomLevel double:1.0
+`dbus-send --system --print-reply --type=method_call --dest='com.inspectron.qWirelessController' / com.inspectron.qWirelessController.requestSetZoomLevel double:1.0`
 
 #### To set to x0.5:
 
-dbus-send --system --print-reply --type=method_call --dest='com.inspectron.qWirelessController' / com.inspectron.qWirelessController.requestSetZoomLevel double:0.5
+`dbus-send --system --print-reply --type=method_call --dest='com.inspectron.qWirelessController' / com.inspectron.qWirelessController.requestSetZoomLevel double:0.5`
 
 #### To view the raw data stream, kill the GUI and run this:
 
-gst-launch-1.0 -v udpsrc port=5006 buffer-size=10485760 ! \
-
+` gst-launch-1.0 -v udpsrc port=5006 buffer-size=10485760 ! \
   "application/x-rtp, payload=26" ! \
-
   rtpjpegdepay ! \
-
   jpegparse ! \
-
   mppjpegdec ! \
-
   videoconvert ! \
-
-  kmssink sync=false &
+  kmssink sync=false & `
 
 #### To look at IC temp:
 
-cat /sys/devices/virtual/thermal/thermal_zone*/temp
+`cat /sys/devices/virtual/thermal/thermal_zone*/temp`
 
 Units are milli-Celsius.
 
@@ -146,19 +140,19 @@ Bottom is GPU
 
 #### To look at IC freq:
 
-cat /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_cur_freq
+`cat /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_cur_freq`
 
 #### To Install Picocom (Linux UART)
 
-sudo apt-get install picocom
+`sudo apt-get install picocom`
 
 #### To Launch Picocom
 
-sudo picocom -b 115200 /dev/ttyUSB0
+`sudo picocom -b 115200 /dev/ttyUSB0`
 
 #### To Launch adb shell on Linux
 
-adb shell
+`adb shell`
 
 #### To open Terminal in a specific directory in Linux.
 
@@ -170,6 +164,6 @@ Select 'Open Terminal from Here'
 
 #### To run a file from Terminal
 
-./FILENAME-ext
+`./FILENAME-ext`
 
 e.g "./flash.sh", "./qWirelessController -q -t",  "./inspSettings.json &"
